@@ -3,3 +3,6 @@ soviet-repression.pdf
 
 # macOS Finder metadata
 .DS_Store
+
+# Local Claude Code session state
+.claude/
