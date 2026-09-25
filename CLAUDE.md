@@ -15,6 +15,7 @@ A personal academic website for Daniil Starikov (Ph.D. student, Harris School of
 - `style.css` — shared stylesheet for all four pages
 - `cv.pdf`, `soviet-repression.pdf`, `formula1-sequential-games.pdf`, `nhl-superstar-economics.pdf` — draft/CV PDFs linked directly from the nav bar and from `research.html`; keep filenames lowercase and hyphenated (no spaces/parentheses) since they're referenced directly in `href`s
 - `favicon.svg` / `apple-touch-icon.png` — "DS" initials mark (Georgia serif, oxblood on cream, matching the site palette); linked from the `<head>` of all four pages
+- `sitemap.xml` / `robots.txt` — SEO helpers listing the four pages and pointing crawlers to the sitemap; update `sitemap.xml` if a page is ever added, renamed, or removed
 
 There is no `cv.html` — the nav bar's "CV" link points straight at `cv.pdf` rather than an intermediate page, matching the pattern on comparable academic sites.
 
@@ -27,7 +28,7 @@ The footer's "Last updated" date is a hand-maintained string (no build step to g
 ## Conventions
 
 - Highlight unfilled content with `<span class="placeholder">...</span>` (styled in `style.css`) rather than leaving TODOs in plain text — this is the pattern already used for things like `[Last Name]`, `[Advisor Name]`, and course names to be filled in.
-- The Google Analytics snippet is commented out in the `<head>` of each page; if enabled, it must be pasted unchanged into all four files with the same Measurement ID.
+- Google Analytics (Measurement ID `G-F8ZYG67HVC`) is live in the `<head>` of each page; the same two `<script>` tags must stay identical across all four files.
 - `research.html` renders publications with a hanging-indent, bibliography-style list (`.pub-list` / `.pub-title` / `.pub-meta` / `.pub-abstract` in `style.css`); `teaching.html` and `olympiads.html` use a simpler `.entry-list` pattern. Match the existing pattern for the page when adding entries.
 
 ## Workflow
