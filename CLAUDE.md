@@ -14,7 +14,7 @@ A personal academic website for Daniil Starikov (Ph.D. student, Harris School of
 - `olympiads.html` — economics olympiad involvement (competitor, jury, organizing)
 - `style.css` — shared stylesheet for all four pages
 - `cv.pdf`, `soviet-repression.pdf`, `formula1-sequential-games.pdf`, `nhl-superstar-economics.pdf` — draft/CV PDFs linked directly from the nav bar and from `research.html`; keep filenames lowercase and hyphenated (no spaces/parentheses) since they're referenced directly in `href`s
-- `favicon.svg` / `apple-touch-icon.png` — "DS" initials mark (Georgia serif, oxblood on cream, matching the site palette); linked from the `<head>` of all four pages
+- `favicon.svg` / `favicon.png` / `apple-touch-icon.png` — "DS" initials mark (Georgia serif, oxblood on cream, matching the site palette); linked from the `<head>` of all four pages. Both the SVG and PNG `<link rel="icon">` tags are needed: browsers use the SVG, but Google's search-result favicon crawler doesn't support SVG and needs the PNG.
 - `sitemap.xml` / `robots.txt` — SEO helpers listing the four pages and pointing crawlers to the sitemap; update `sitemap.xml` if a page is ever added, renamed, or removed
 
 There is no `cv.html` — the nav bar's "CV" link points straight at `cv.pdf` rather than an intermediate page, matching the pattern on comparable academic sites.
