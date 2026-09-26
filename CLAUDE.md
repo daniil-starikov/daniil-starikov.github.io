@@ -8,18 +8,22 @@ A personal academic website for Daniil Starikov (Ph.D. student, Harris School of
 
 ## Structure
 
+HTML pages stay at the repo root (so their URLs don't change — they're already submitted to Google's index via `sitemap.xml`). Everything else lives under `assets/`, grouped by type:
+
 - `index.html` — home/bio page
 - `research.html` — working papers and pre-Ph.D. research, each with a PDF draft
 - `teaching.html` — TA positions and awards
 - `olympiads.html` — economics olympiad involvement (competitor, jury, organizing)
-- `style.css` — shared stylesheet for all four pages
-- `cv.pdf`, `soviet-repression.pdf`, `formula1-sequential-games.pdf`, `nhl-superstar-economics.pdf` — draft/CV PDFs linked directly from the nav bar and from `research.html`; keep filenames lowercase and hyphenated (no spaces/parentheses) since they're referenced directly in `href`s
-- `favicon.svg` / `favicon.png` / `apple-touch-icon.png` — "DS" initials mark (Georgia serif, oxblood on cream, matching the site palette); linked from the `<head>` of all four pages. Both the SVG and PNG `<link rel="icon">` tags are needed: browsers use the SVG, but Google's search-result favicon crawler doesn't support SVG and needs the PNG.
+- `robots.txt`, `sitemap.xml` — must stay at the repo root; `robots.txt` only works there, and it points to `sitemap.xml` with a root-relative URL
+- `assets/css/style.css` — shared stylesheet for all four pages
+- `assets/pdfs/cv.pdf`, `soviet-repression.pdf`, `formula1-sequential-games.pdf`, `nhl-superstar-economics.pdf` — draft/CV PDFs linked from the nav bar and from `research.html`; keep filenames lowercase and hyphenated (no spaces/parentheses) since they're referenced directly in `href`s
+- `assets/images/photo.webp` — sidebar headshot
+- `assets/icons/favicon.svg` / `favicon.png` / `apple-touch-icon.png` — "DS" initials mark (Georgia serif, oxblood on cream, matching the site palette); linked from the `<head>` of all four pages. Both the SVG and PNG `<link rel="icon">` tags are needed: browsers use the SVG, but Google's search-result favicon crawler doesn't support SVG and needs the PNG.
 - `sitemap.xml` / `robots.txt` — SEO helpers listing the four pages and pointing crawlers to the sitemap; update `sitemap.xml` if a page is ever added, renamed, or removed
 
-There is no `cv.html` — the nav bar's "CV" link points straight at `cv.pdf` rather than an intermediate page, matching the pattern on comparable academic sites.
+There is no `cv.html` — the nav bar's "CV" link points straight at `assets/pdfs/cv.pdf` rather than an intermediate page, matching the pattern on comparable academic sites.
 
-`soviet-repression.pdf` is listed in `.gitignore` on purpose: that paper is shared "on request" only (see its "Work in progress" entry in `research.html`, which has no `[PDF]` link), so the file must stay local and never get committed or pushed to GitHub Pages. Don't remove it from `.gitignore` or add a link to it without the user's explicit go-ahead.
+`assets/pdfs/soviet-repression.pdf` is listed in `.gitignore` (by that path) on purpose: that paper is shared "on request" only (see its "Work in progress" entry in `research.html`, which has no `[PDF]` link), so the file must stay local and never get committed or pushed to GitHub Pages. Don't remove it from `.gitignore` or add a link to it without the user's explicit go-ahead.
 
 Each HTML page repeats the same header/nav/footer markup independently (no templating). When editing shared chrome (nav links, footer text, the Google Analytics snippet), apply the change to all four files identically.
 
@@ -27,9 +31,9 @@ The footer's "Last updated" date is a hand-maintained string (no build step to g
 
 ## Conventions
 
-- Highlight unfilled content with `<span class="placeholder">...</span>` (styled in `style.css`) rather than leaving TODOs in plain text — this is the pattern already used for things like `[Last Name]`, `[Advisor Name]`, and course names to be filled in.
+- Highlight unfilled content with `<span class="placeholder">...</span>` (styled in `assets/css/style.css`) rather than leaving TODOs in plain text — this is the pattern already used for things like `[Last Name]`, `[Advisor Name]`, and course names to be filled in.
 - Google Analytics (Measurement ID `G-F8ZYG67HVC`) is live in the `<head>` of each page; the same two `<script>` tags must stay identical across all four files.
-- `research.html` renders publications with a hanging-indent, bibliography-style list (`.pub-list` / `.pub-title` / `.pub-meta` / `.pub-abstract` in `style.css`); `teaching.html` and `olympiads.html` use a simpler `.entry-list` pattern. Match the existing pattern for the page when adding entries.
+- `research.html` renders publications with a hanging-indent, bibliography-style list (`.pub-list` / `.pub-title` / `.pub-meta` / `.pub-abstract` in `assets/css/style.css`); `teaching.html` and `olympiads.html` use a simpler `.entry-list` pattern. Match the existing pattern for the page when adding entries.
 
 ## Workflow
 

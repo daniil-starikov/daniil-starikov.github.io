@@ -1,9 +1,10 @@
 # Daniil Starikov's academic website
 
 Plain HTML/CSS, no build step. Four pages (`index.html`, `research.html`,
-`teaching.html`, `olympiads.html`) sharing `style.css`. The nav bar's "CV"
-link points directly at `cv.pdf` rather than a separate page. Deploys to
-GitHub Pages with zero configuration.
+`teaching.html`, `olympiads.html`) sharing `assets/css/style.css`; images,
+PDFs, and icons live under `assets/` too. The nav bar's "CV" link points
+directly at the PDF rather than a separate page. Deploys to GitHub Pages
+with zero configuration.
 
 ## 1. Put it on GitHub Pages
 
